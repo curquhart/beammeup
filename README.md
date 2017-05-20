@@ -6,6 +6,9 @@ between objects/threads without all the bloat of general purpose libraries. By d
 is of the library (in static and dynamic flavours) are built. Thread unsafe is more efficient, but it will crash if run
 in a threaded environment.
 
+### Status
+[![Build Status (Master)](https://travis-ci.org/curquhart/beammeup.svg?branch=master)](https://travis-ci.org/curquhart/beammeup)
+
 ### Basic Usage
 The Transporter class tracks object life-cycle. That is, if object A is connected to object B through a signal and
 object B is destroyed, new signals from object A won't crash the application.

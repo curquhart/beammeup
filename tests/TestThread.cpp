@@ -9,7 +9,10 @@ using ::testing::Return;
 
 namespace BeamMeUp {
     class TestThreader : public Thread {
+
     public:
+        static const int DELAY_MULTIPLIER;
+
         TestThreader();
 
         TestThreader(unsigned int delayInMicroseconds);
@@ -22,6 +25,7 @@ namespace BeamMeUp {
         static std::mutex mutex;
         static std::vector<TestThreader *> deletedThreads;
     };
+    const int TestThreader::DELAY_MULTIPLIER = 200;
 
     std::mutex TestThreader::mutex;
     std::vector<TestThreader *> TestThreader::deletedThreads;
@@ -31,7 +35,8 @@ namespace BeamMeUp {
     }
 
     TestThreader::TestThreader(unsigned int delayInMicroseconds) : Thread() {
-        this->delay = delayInMicroseconds;
+        // Multiply delay by DELAY_MULTIPLIER (the number is somewhat arbitrary really) to reduce edge cases caused by slow VMs
+        this->delay = delayInMicroseconds * DELAY_MULTIPLIER;
     }
 
     void TestThreader::run() {
@@ -39,7 +44,7 @@ namespace BeamMeUp {
         while (!isStopping()) {
 
             // Sleep for 5 μs
-            std::this_thread::sleep_for(std::chrono::microseconds(5));
+            std::this_thread::sleep_for(std::chrono::microseconds(5 * DELAY_MULTIPLIER));
         }
 
         if (delay > 0) {
@@ -98,7 +103,7 @@ namespace BeamMeUp {
         thread.start();
 
         // Sleep for 1 μs to ensure that the thread has actually started running
-        std::this_thread::sleep_for(std::chrono::microseconds(1));
+        std::this_thread::sleep_for(std::chrono::microseconds(TestThreader::DELAY_MULTIPLIER));
 
         // Tell the thread to stop
         thread.stop(false);
@@ -108,7 +113,7 @@ namespace BeamMeUp {
         ASSERT_FALSE(thread.isFinished());
 
         // Sleep for enough time for the thread to shut down. 50 μs?
-        std::this_thread::sleep_for(std::chrono::microseconds(50));
+        std::this_thread::sleep_for(std::chrono::microseconds(50 * TestThreader::DELAY_MULTIPLIER));
 
         // The thread should definitely be finished now
         ASSERT_TRUE(thread.isFinished());
@@ -124,7 +129,7 @@ namespace BeamMeUp {
         ASSERT_THROW(thread.start(), std::runtime_error);
 
         // Sleep for 1 μs to ensure that the thread has actually started running
-        std::this_thread::sleep_for(std::chrono::microseconds(1));
+        std::this_thread::sleep_for(std::chrono::microseconds(1 * TestThreader::DELAY_MULTIPLIER));
 
         // Tell the thread to stop
         thread.stop(false);
@@ -134,7 +139,7 @@ namespace BeamMeUp {
         ASSERT_FALSE(thread.isFinished());
 
         // Sleep for enough time for the thread to shut down. 50 μs?
-        std::this_thread::sleep_for(std::chrono::microseconds(50));
+        std::this_thread::sleep_for(std::chrono::microseconds(50 * TestThreader::DELAY_MULTIPLIER));
 
         // The thread should definitely be finished now
         ASSERT_TRUE(thread.isFinished());
@@ -151,7 +156,7 @@ namespace BeamMeUp {
         thread.start();
 
         // Sleep for 1 μs to ensure that the thread has actually started running
-        std::this_thread::sleep_for(std::chrono::microseconds(1));
+        std::this_thread::sleep_for(std::chrono::microseconds(1 * TestThreader::DELAY_MULTIPLIER));
 
         // Tell the thread to stop
         thread.stop(false);
@@ -161,7 +166,7 @@ namespace BeamMeUp {
         ASSERT_FALSE(thread.isFinished());
 
         // Sleep for enough time for the thread to shut down. 50 μs?
-        std::this_thread::sleep_for(std::chrono::microseconds(50));
+        std::this_thread::sleep_for(std::chrono::microseconds(50 * TestThreader::DELAY_MULTIPLIER));
 
         // The thread should definitely be finished now
         ASSERT_TRUE(thread.isFinished());

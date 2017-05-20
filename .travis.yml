@@ -1,0 +1,38 @@
+sudo: require
+dist: trusty
+language: cpp
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-5
+      - g++-5
+env: COMPILER=g++-5
+
+before_install:
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
+
+install:
+  - git clone https://github.com/google/googletest.git
+  - mkdir -p googletest/googletest/build
+  - pushd googletest/googletest/build
+  - cmake -G"Unix Makefiles" ..
+  - make
+  - sudo cp -vr ../include/gtest /usr/include
+  - sudo cp -v lib* /usr/lib
+  - popd
+  - rm -rf googletest/googletest/build
+  - mkdir -p googletest/googlemock/build
+  - pushd googletest/googlemock/build
+  - cmake -G"Unix Makefiles" ..
+  - make
+  - sudo cp -vr ../include/gmock /usr/include
+  - sudo cp -v lib* /usr/lib
+  - popd
+  - rm -rf googletest/googlemock/build
+  - sudo curl https://raw.githubusercontent.com/triglav/cmake-findgmock/master/FindGMock.cmake -o `echo /usr/share/cmake-*/Modules`/FindGMock.cmake
+
+script:
+  - cmake .
+  - make tests

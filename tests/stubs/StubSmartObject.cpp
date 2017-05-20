@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "StubSmartObject.h"
 
 namespace BeamMeUp {
