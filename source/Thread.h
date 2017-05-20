@@ -1,6 +1,7 @@
 #if !defined(BEAMMEUP_THREAD_H) && defined(THREAD_SAFE)
 #define BEAMMEUP_THREAD_H
 
+#include <atomic>
 #include <thread>
 
 namespace BeamMeUp {
