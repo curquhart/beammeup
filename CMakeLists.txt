@@ -124,7 +124,7 @@ IF(GTEST_FOUND AND GMOCK_FOUND)
 
     # thread safe
     add_executable(${VARIANT_STATIC_THREAD_UNSAFE}_tests ${TEST_SOURCE_FILES} ${LOGIC_SOURCE_FILES})
-    target_link_libraries(${VARIANT_STATIC_THREAD_UNSAFE}_tests ${GMOCK_LIBRARIES} ${GTEST_BOTH_LIBRARIES})
+    target_link_libraries(${VARIANT_STATIC_THREAD_UNSAFE}_tests ${GMOCK_LIBRARIES} ${GTEST_BOTH_LIBRARIES} Threads::Threads)
     set_target_properties(${VARIANT_STATIC_THREAD_UNSAFE}_tests PROPERTIES EXCLUDE_FROM_ALL 1)
     target_compile_definitions(${VARIANT_STATIC_THREAD_UNSAFE}_tests PRIVATE VIRTUAL_FOR_MOCKING=1)
     # thread unsafe
