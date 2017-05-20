@@ -1,0 +1,15 @@
+CMakeCache.txt
+*.swp
+*.cmake
+CMakeFiles
+Makefile
+*.o
+*.a
+.idea
+bin/
+lib/
+code_coverage.info
+code_coverage_report/
+*.profraw
+cmake-build-debug/
+*.cbp
