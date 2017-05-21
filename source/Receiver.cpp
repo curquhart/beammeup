@@ -1,5 +1,5 @@
-#include "Receiver.h"
-#include "Transporter.h"
+#include "include/beammeup/Receiver.h"
+#include "include/beammeup/Transporter.h"
 
 namespace BeamMeUp {
     Receiver::Receiver(Transporter *transporter) : transporter(transporter) {

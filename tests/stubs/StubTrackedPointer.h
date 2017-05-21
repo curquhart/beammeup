@@ -1,9 +1,9 @@
 #ifndef BEAMMEUP_STUBTRACKEDPOINTER_H
 #define BEAMMEUP_STUBTRACKEDPOINTER_H
 
-#include "source/Receiver.h"
+#include "include/beammeup/Receiver.h"
 
-#include "source/ArbitraryPointer.h"
+#include "include/beammeup/ArbitraryPointer.h"
 
 namespace BeamMeUp {
     /**

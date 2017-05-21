@@ -3,9 +3,9 @@
 
 #include <vector>
 
-#include "source/Receiver.h"
-#include "source/Signaler.h"
-#include "source/Types.h"
+#include "include/beammeup/Receiver.h"
+#include "include/beammeup/Signaler.h"
+#include "include/beammeup/Types.h"
 
 namespace BeamMeUp {
     class Variant;

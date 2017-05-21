@@ -1,5 +1,5 @@
-#include "Variant.h"
-#include "VariantVector.h"
+#include "include/beammeup/Variant.h"
+#include "include/beammeup/VariantVector.h"
 
 namespace BeamMeUp {
     VariantVector &VariantVector::operator<<(const Variant &variant) {

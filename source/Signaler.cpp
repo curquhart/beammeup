@@ -1,6 +1,6 @@
-#include "Receiver.h"
-#include "Signaler.h"
-#include "Transporter.h"
+#include "include/beammeup/Receiver.h"
+#include "include/beammeup/Signaler.h"
+#include "include/beammeup/Transporter.h"
 
 namespace BeamMeUp {
     Signaler::Signaler(Transporter *transporter) : transporter(transporter) {

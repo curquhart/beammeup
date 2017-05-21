@@ -1,10 +1,10 @@
 #ifndef BEAMMEUP_MOCKTRANSPORTER_H
 #define BEAMMEUP_MOCKTRANSPORTER_H
 
-#include "source/Receiver.h"
-#include "source/Signaler.h"
-#include "source/Transporter.h"
-#include "source/Variant.h"
+#include "include/beammeup/Receiver.h"
+#include "include/beammeup/Signaler.h"
+#include "include/beammeup/Transporter.h"
+#include "include/beammeup/Variant.h"
 
 #include "gmock/gmock.h"
 
