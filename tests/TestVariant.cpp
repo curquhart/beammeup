@@ -1,7 +1,7 @@
 #include "tests/mocks/MockTransporter.h"
 #include "tests/stubs/StubTrackedPointer.h"
-#include "source/VariantMap.h"
-#include "source/VariantVector.h"
+#include "include/beammeup/VariantMap.h"
+#include "include/beammeup/VariantVector.h"
 
 using ::testing::_;
 

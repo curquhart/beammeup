@@ -1,6 +1,6 @@
 #include <algorithm>
 
-#include "source/Thread.h"
+#include "include/beammeup/Thread.h"
 #include "tests/mocks/MockTransporter.h"
 
 using ::testing::_;

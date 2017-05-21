@@ -35,19 +35,19 @@ find_package(GMock)
 
 set(LOGIC_SOURCE_FILES
     source/ArbitraryPointer.cpp
-    source/ArbitraryPointer.h
+    include/beammeup/ArbitraryPointer.h
     source/Receiver.cpp
-    source/Receiver.h
+    include/beammeup/Receiver.h
     source/Signaler.cpp
-    source/Signaler.h
+    include/beammeup/Signaler.h
     source/Transporter.cpp
-    source/Transporter.h
-    source/Types.h
+    include/beammeup/Transporter.h
+    include/beammeup/Types.h
     source/Variant.cpp
-    source/Variant.h
-    source/VariantMap.h
+    include/beammeup/Variant.h
+    include/beammeup/VariantMap.h
     source/VariantVector.cpp
-    source/VariantVector.h
+    include/beammeup/VariantVector.h
 )
 set(TEST_SOURCE_FILES
     tests/mocks/MockTransporter.h
@@ -66,7 +66,7 @@ find_package(Threads REQUIRED)
 set(LOGIC_SOURCE_FILES_TS
     ${LOGIC_SOURCE_FILES}
     source/Thread.cpp
-    source/Thread.h
+    include/beammeup/Thread.h
 )
 set(TEST_SOURCE_FILES_TS
     ${TEST_SOURCE_FILES}

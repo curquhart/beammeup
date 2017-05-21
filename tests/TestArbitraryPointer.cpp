@@ -1,5 +1,5 @@
-#include "source/Transporter.h"
-#include "source/Signaler.h"
+#include "include/beammeup/Transporter.h"
+#include "include/beammeup/Signaler.h"
 #include "tests/stubs/StubSmartObject.h"
 #include "tests/mocks/MockTransporter.h"
 

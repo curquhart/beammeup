@@ -1,5 +1,5 @@
-#include "Thread.h"
-#include "Transporter.h"
+#include "include/beammeup/Thread.h"
+#include "include/beammeup/Transporter.h"
 
 namespace BeamMeUp {
 

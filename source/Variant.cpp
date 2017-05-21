@@ -2,10 +2,10 @@
 #include <cmath>
 #include <sstream>
 
-#include "ArbitraryPointer.h"
-#include "Variant.h"
-#include "VariantMap.h"
-#include "VariantVector.h"
+#include "include/beammeup/ArbitraryPointer.h"
+#include "include/beammeup/Variant.h"
+#include "include/beammeup/VariantMap.h"
+#include "include/beammeup/VariantVector.h"
 
 namespace BeamMeUp {
     void Variant::init(DataType type) {
