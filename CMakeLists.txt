@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2.2)
+cmake_minimum_required(VERSION 3.0.2)
 project(BeamMeUp)
 set(VARIANT_DYNAMIC_THREAD_UNSAFE ${PROJECT_NAME})
 set(VARIANT_STATIC_THREAD_UNSAFE ${PROJECT_NAME}Static)
