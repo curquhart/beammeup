@@ -21,7 +21,7 @@ namespace BeamMeUp {
          * Sets this thread as "stopping". It is up to the subclass to actually handle
          * shutdown
          */
-        void stop(bool block = true);
+        virtual void stop(bool block = true);
 
         /**
          * Joins on this thread if it is running. If not, this does nothing
